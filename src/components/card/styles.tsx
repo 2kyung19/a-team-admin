@@ -15,6 +15,8 @@ const Box = styled.div`
   box-sizing: border-box;
   border-radius: 4px;
 
+  cursor: pointer;
+
   @media only screen and (max-width: ${props => props.theme.media.mobile}px) {
     width: 320px;
     height: 344px;
