@@ -2,6 +2,9 @@
   "name": "a-team-admin",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "@types/json-server": "^0.14.4",
     "@types/node": "^16.11.22",
