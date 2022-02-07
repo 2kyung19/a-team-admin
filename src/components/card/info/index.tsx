@@ -2,7 +2,7 @@ import React from 'react';
 import * as S from 'components/card/info/styles';
 
 interface props {
-  data: Array<string | number>;
+  data: Array<string>;
 }
 
 const CardInfo = (Props: props): JSX.Element => {
