@@ -5,6 +5,11 @@ const LOGIN_STATUS = '로그아웃';
 const Header = (): JSX.Element => {
   return (
     <S.StyledHeader>
+      <S.StyledEclipseWrapper>
+        <S.StyledEclipse />
+        <S.StyledEclipse />
+        <S.StyledEclipse />
+      </S.StyledEclipseWrapper>
       <S.StyledInnerDiv>
         <S.StyledIcon src="https://i.ibb.co/M85H48c/icon.png" alt="icon" />
         <S.StyledInfoDiv>

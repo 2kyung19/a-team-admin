@@ -8,4 +8,10 @@ const theme = {
   colors,
 };
 
+const media = {
+  mobile: 425,
+};
+
+console.log(media);
+
 export default theme;
