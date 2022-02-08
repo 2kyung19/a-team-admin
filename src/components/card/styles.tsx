@@ -13,14 +13,14 @@ const Box = styled.div`
   border-radius: 0.4rem;
   cursor: pointer;
 
-  @media only screen and (max-width: ${props => props.theme.media.mobile}em) {
-    width: 32rem;
-    height: 34.4rem;
-  }
-
   &:hover {
     padding: 2.3rem 1.5rem;
     border: 0.2rem solid ${props => props.theme.colors.primary};
+  }
+
+  @media only screen and (max-width: ${props => props.theme.media.mobile}em) {
+    width: 32rem;
+    height: 34.4rem;
   }
 `;
 
@@ -58,8 +58,7 @@ const Customer = styled.div`
 `;
 
 const DueDate = styled.div`
-  /* height: 2rem; */
-
+  height: 2rem;
   font-family: 'Noto Sans KR';
   font-weight: 400;
   font-size: 1.4rem;

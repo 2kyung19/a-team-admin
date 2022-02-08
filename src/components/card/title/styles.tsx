@@ -29,7 +29,6 @@ const Tag = styled.div<{ status: string }>`
 
   background: ${props => props.theme.colors.white};
   border: 0.1rem solid ${props => props.theme.colors.yellow};
-  box-sizing: border-box;
   border-radius: 1.2rem;
 
   font-family: 'Noto Sans KR';
