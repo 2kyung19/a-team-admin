@@ -20,7 +20,7 @@ export const GridItemWrapper = styled.div`
   width: 100%;
   height: 35.6rem;
 
-  &:nth-child(2n + 1) {
+  &:nth-of-type(2n) {
     @media screen and (max-width: ${props => props.theme.media.girdLarge}rem) {
       justify-content: flex-start;
     }
@@ -29,7 +29,7 @@ export const GridItemWrapper = styled.div`
     }
   }
 
-  &:nth-child(2n) {
+  &:nth-of-type(2n + 1) {
     @media screen and (max-width: ${props => props.theme.media.girdLarge}rem) {
       justify-content: flex-end;
     }

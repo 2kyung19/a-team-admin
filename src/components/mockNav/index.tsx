@@ -13,7 +13,7 @@ const Container = styled.div`
   height: 6rem;
   font-size: 2.5rem;
   color: #fff;
-  font-family: 'Noto Sans KR Bold';
+  font-family: 'Noto Sans KR';
   font-weight: 600;
   line-height: 1.5;
 `;

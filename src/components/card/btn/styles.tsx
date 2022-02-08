@@ -20,9 +20,8 @@ const Btn = styled.button<{ color: string }>`
   border: 0.1rem solid ${props => props.theme.colors.primary};
   border-radius: 0.4rem;
 
-  font-family: 'Noto Sans KR Medium';
+  font-family: 'Noto Sans KR';
   font-size: 1.4rem;
-  font-style: normal;
   font-weight: 450;
   line-height: 1.4;
 
