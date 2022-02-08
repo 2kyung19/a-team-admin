@@ -3,8 +3,9 @@ import styled from 'styled-components';
 export const StyledContainer = styled.div`
   ${props => props.theme.Wrapper}
   margin-top: 4rem;
+  min-width: 33rem;
 
-  @media (max-width: 1200px) {
+  @media screen and (max-width: ${props => props.theme.media.girdLarge}rem) {
     padding: 0 2rem;
   }
 `;

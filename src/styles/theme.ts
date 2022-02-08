@@ -13,7 +13,9 @@ const colors = {
 };
 
 const media = {
-  mobile: 26.56,
+  mobile: 28.75,
+  girdLarge: 75,
+  girdMedium: 50.31,
 };
 
 const WrapSize = '1130px';

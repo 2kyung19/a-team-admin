@@ -21,19 +21,19 @@ export const GridItemWrapper = styled.div`
   height: 35.6rem;
 
   &:nth-child(2n + 1) {
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: ${props => props.theme.media.girdLarge}rem) {
       justify-content: flex-start;
     }
-    @media screen and (max-width: 805px) {
+    @media screen and (max-width: ${props => props.theme.media.girdMedium}rem) {
       justify-content: center;
     }
   }
 
   &:nth-child(2n) {
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: ${props => props.theme.media.girdLarge}rem) {
       justify-content: flex-end;
     }
-    @media screen and (max-width: 805px) {
+    @media screen and (max-width: ${props => props.theme.media.girdMedium}rem) {
       justify-content: center;
     }
   }
