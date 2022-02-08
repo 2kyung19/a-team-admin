@@ -1,18 +1,5 @@
 import styled from 'styled-components';
 
-export const StyleGreyBackground = styled.div<{ isClicked: boolean }>`
-  padding: 50%;
-  background-color: black;
-  opacity: 0.5;
-  z-index: 10;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: ${props => {
-    return props.isClicked ? 'flex' : 'none';
-  }};
-`;
-
 export const StyledHeader = styled.div`
   height: 70px;
   width: 100%;
@@ -100,8 +87,34 @@ export const StyledInfoLogin = styled(StyledInfoInnerDiv)`
   border-right: none;
 `;
 
-// export const StyleEclipseWrapper = styled.div`
-//   width: 50px;
-//   height: 100%;
-//   backgroun
-// `;
+export const StyledGreyBackground = styled.div<{ isClicked: boolean }>`
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: ${props => {
+    return props.isClicked ? 'flex' : 'none';
+  }};
+`;
+
+export const StyledWhiteBgWrapper = styled.div`
+  background-color: white;
+  width: 280px;
+  height: 100%;
+  z-index: 20;
+`;
+export const StyledWhiteBgHeader = styled.div`
+  border-bottom: 1px #e5e5e5 solid;
+  height: 4.4rem;
+`;
+export const StyledEclipseIcon = styled.img`
+  margin: 1rem 1.25rem;
+`;
+
+export const StyledWhiteBgBody = styled.div`
+  padding-left: 3.2rem;
+  margin-top: 3.6rem;
+`;

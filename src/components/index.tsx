@@ -30,12 +30,22 @@ const Header = (): JSX.Element => {
           </S.StyledInfoDiv>
         </S.StyledInnerDiv>
       </S.StyledHeader>
-      <S.StyleGreyBackground
+      <S.StyledGreyBackground
         isClicked={isClicked}
         onClick={() => {
           setIsClicked(!isClicked);
-        }}
-      />
+        }}>
+        <S.StyledWhiteBgWrapper>
+          <S.StyledWhiteBgHeader>
+            <S.StyledEclipseIcon
+              src="https://i.ibb.co/fXZSLq9/eclipse-Icon.png"
+              alt="eclipse-Icon"
+            />
+          </S.StyledWhiteBgHeader>
+          <S.StyledWhiteBgBody>파트너정밀가공</S.StyledWhiteBgBody>
+          <S.StyledWhiteBgBody>{LOGIN_STATUS}</S.StyledWhiteBgBody>
+        </S.StyledWhiteBgWrapper>
+      </S.StyledGreyBackground>
     </div>
   );
 };
