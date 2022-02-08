@@ -14,7 +14,6 @@ const App = (): JSX.Element => {
           <div>가공방식, 재료</div>
           <div>토글| 상담중인 요청만 보기</div>
         </FilterContainer>
-        {/* {null ? ( */}
         {constants.requestMockData ? (
           <CardContainer requests={constants.requestMockData} />
         ) : (
