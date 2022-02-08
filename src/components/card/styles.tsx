@@ -43,9 +43,7 @@ const Content = styled.div`
 `;
 
 const Customer = styled.div`
-  width: 5.1rem;
   height: 2rem;
-
   font-family: 'Noto Sans KR';
   font-weight: 500;
   font-size: 1.4rem;
@@ -60,8 +58,7 @@ const Customer = styled.div`
 `;
 
 const DueDate = styled.div`
-  width: 12.5rem;
-  height: 2rem;
+  /* height: 2rem; */
 
   font-family: 'Noto Sans KR';
   font-weight: 400;
