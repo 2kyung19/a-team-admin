@@ -1,4 +1,3 @@
-import React from 'react';
 import * as S from 'components/card/styles';
 import Title from 'components/card/title';
 import CardInfo from 'components/card/info';
@@ -19,22 +18,24 @@ interface Props {
 }
 
 const Card = (props: Props): JSX.Element => {
-  const { request } = props;
+  const {
+    request: { status, title, client, due, count, amount, method, material },
+  } = props;
 
   return (
     <S.Box>
       <S.Top>
-        <Title status={request.status}>{request.title}</Title>
-        <S.Customer>{request.client}</S.Customer>
-        <S.DueDate>{request.due}까지 납기</S.DueDate>
+        <Title status={status}>{title}</Title>
+        <S.Customer>{client}</S.Customer>
+        <S.DueDate>{due}까지 납기</S.DueDate>
       </S.Top>
       <S.Content>
         <CardInfo
           data={[
-            `${request.count}개`,
-            `${request.amount}개`,
-            request.method.join(', '),
-            request.material.join(', '),
+            `${count}개`,
+            `${amount}개`,
+            method.join(', '),
+            material.join(', '),
           ]}
         />
         <CardBtn />
