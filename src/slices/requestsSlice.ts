@@ -15,7 +15,9 @@ import { getMaterialFilters } from 'slices/materialsFiltersSlice';
 export const fetchRequests = createAsyncThunk(
   'requests/fetchRequests',
   async () => {
-    const response = await axios.get('http://localhost:3001/requests');
+    const response = await axios.get(
+      'https://a-team-admin-10-issue-4.herokuapp.com/requests',
+    );
     return response.data;
   },
 );
