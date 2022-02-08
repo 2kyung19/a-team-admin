@@ -1,5 +1,18 @@
 import styled from 'styled-components';
 
+export const StyleGreyBackground = styled.div<{ isClicked: boolean }>`
+  padding: 50%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: ${props => {
+    return props.isClicked ? 'flex' : 'none';
+  }};
+`;
+
 export const StyledHeader = styled.div`
   height: 70px;
   width: 100%;
@@ -11,7 +24,7 @@ export const StyledHeader = styled.div`
   }
 `;
 
-export const StyledEclipseWrapper = styled.div`
+export const StyledEclipseWrapper = styled.button`
   display: none;
   @media only screen and (max-width: 450px) {
     display: inline-block;
@@ -86,3 +99,9 @@ export const StyledInfoLogin = styled(StyledInfoInnerDiv)`
   width: 52px;
   border-right: none;
 `;
+
+// export const StyleEclipseWrapper = styled.div`
+//   width: 50px;
+//   height: 100%;
+//   backgroun
+// `;
