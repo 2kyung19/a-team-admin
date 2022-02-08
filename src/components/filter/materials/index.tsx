@@ -24,6 +24,12 @@ const MaterialsFilter = () => {
     (state: RootState) => state.dropdown.status,
   );
   const activeMaterialFilters = useSelector(getMaterialFilters);
+  const activeFiltersCount = activeMaterialFilters.length;
+
+  const buttonText =
+    activeFiltersCount > 0
+      ? `${BUTTON_TEXT}(${activeFiltersCount})`
+      : BUTTON_TEXT;
 
   const renderedMaterials = Object.keys(MATERIALS).map(material => {
     return (
@@ -47,7 +53,7 @@ const MaterialsFilter = () => {
         type="button"
         active={activeMaterialFilters.length > 0}
         onClick={toggleDropdown(dropdownStatus, dispatch)}>
-        {BUTTON_TEXT}
+        {buttonText}
         <DropdownArrow active={activeMaterialFilters.length > 0} />
       </S.DropdownBtn>
       <S.FilterDropdown
