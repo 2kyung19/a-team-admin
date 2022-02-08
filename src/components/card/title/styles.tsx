@@ -6,7 +6,6 @@ const Box = styled.div`
 `;
 
 const Text = styled.div`
-  width: 12.5rem;
   height: 2.4rem;
 
   font-family: 'Noto Sans KR Bold';
