@@ -1,17 +1,22 @@
 const colors = {
   black: '#000000',
+  white: '#ffffff',
   gray: '#ccc',
   header: '#1565C0',
+  gray1: '#e5e5e5',
+  gray2: '#939fa5',
+  gray3: '#323D45',
+  primary: '#2196f3',
+  yellow: '#FFA000',
+};
+
+const media = {
+  mobile: 26.56,
 };
 
 const theme = {
   colors,
+  media,
 };
-
-const media = {
-  mobile: 425,
-};
-
-console.log(media);
 
 export default theme;
