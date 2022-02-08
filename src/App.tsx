@@ -47,5 +47,4 @@ const App = (): JSX.Element => {
       </MainContainer>
     </>
   );
-
 export default App;
