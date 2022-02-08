@@ -16,14 +16,14 @@ export const Header = styled.div`
 
 export const Title = styled.h1`
   font-size: 2rem;
-  font-family: 'Noto Sans KR Bold';
+  font-family: 'Noto Sans KR';
   font-weight: 600;
   line-height: 1.6;
   color: ${props => props.theme.colors.gray3};
 `;
 
 export const SubTitle = styled.h3`
-  font-family: 'Noto Sans KR Regular';
+  font-family: 'Noto Sans KR';
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.5;
