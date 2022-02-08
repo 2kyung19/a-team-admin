@@ -47,6 +47,7 @@
     "react/react-in-jsx-scope": 0,
     "no-unused-vars": 1,
     "no-param-reassign": 0,
-    "import/prefer-default-export": 0
+    "import/prefer-default-export": 0,
+    "global-require": 0
   }
 }
