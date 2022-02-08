@@ -15,7 +15,7 @@ const colors = {
 };
 
 const media = {
-  mobile: '28.75em',
+  mobile: 28.75,
   girdLarge: 75,
   girdMedium: 50.31,
 };

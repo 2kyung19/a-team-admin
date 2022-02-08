@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import * as S from './styles';
 
 const LOGIN_STATUS = '로그아웃';
@@ -7,7 +7,7 @@ const Header = (): JSX.Element => {
   const [isClicked, setIsClicked] = useState(false);
 
   return (
-    <div>
+    <>
       <S.StyledHeader>
         <S.StyledEclipseWrapper
           onClick={() => {
@@ -56,7 +56,7 @@ const Header = (): JSX.Element => {
           </S.StyledWhiteBgBodyContainer>
         </S.StyledWhiteBgWrapper>
       </S.StyledGreyBackground>
-    </div>
+    </>
   );
 };
 

@@ -6,14 +6,14 @@ export const StyledHeader = styled.div`
   align-items: center;
   padding: 2.5rem 4rem;
   background-color: ${({ theme }) => theme.colors.header};
-  @media only screen and (max-width: ${props => props.theme.media.mobile}) {
+  @media only screen and (max-width: ${props => props.theme.media.mobile}em) {
     padding: 1.6rem 0rem 1.6rem 2.3rem;
   }
 `;
 
 export const StyledEclipseWrapper = styled.button`
   display: none;
-  @media only screen and (max-width: ${props => props.theme.media.mobile}) {
+  @media only screen and (max-width: ${props => props.theme.media.mobile}em) {
     display: flex;
     flex-direction: column;
   }
@@ -21,7 +21,7 @@ export const StyledEclipseWrapper = styled.button`
 
 export const StyledEclipse = styled.div`
   display: none;
-  @media only screen and (max-width: ${props => props.theme.media.mobile}) {
+  @media only screen and (max-width: ${props => props.theme.media.mobile}em) {
     width: 1.8rem;
     height: 0.2rem;
     background-color: ${({ theme }) => theme.colors.white};
@@ -38,14 +38,14 @@ export const StyledInnerDiv = styled.div`
 `;
 
 export const StyledIcon = styled.img`
-  @media only screen and (max-width: ${props => props.theme.media.mobile}) {
+  @media only screen and (max-width: ${props => props.theme.media.mobile}em) {
     margin-left: 1.9rem;
   }
 `;
 
 export const StyledInfoDiv = styled.div`
   display: flex;
-  @media only screen and (max-width: ${props => props.theme.media.mobile}) {
+  @media only screen and (max-width: ${props => props.theme.media.mobile}em) {
     display: none;
   }
 `;
@@ -106,7 +106,7 @@ export const StyledWhiteBgWrapper = styled.div`
   animation: ${animatePosition} 0.5s;
 `;
 export const StyledWhiteBgHeader = styled.div`
-  border-bottom: 1px #e5e5e5 solid;
+  border-bottom: 1px ${({ theme }) => theme.colors.gray1} solid;
   padding: 1.6rem 0rem 1.6rem 2rem;
   height: 4.4rem;
 `;
