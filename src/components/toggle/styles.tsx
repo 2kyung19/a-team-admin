@@ -50,8 +50,8 @@ const Check = styled.input`
 
     &::before {
       background-color: ${props => props.theme.colors.primary};
-      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12),
-        0px 2px 2px rgba(0, 0, 0, 0.24);
+      box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.12),
+        0 0.2rem 0.2rem rgba(0, 0, 0, 0.24);
       transform: matrix(-1, 0, 0, 1, 0, 0);
       transform: translateX(2rem);
       transition: ease 300ms;
