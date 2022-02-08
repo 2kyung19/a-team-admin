@@ -11,7 +11,7 @@ const CardContainer = ({ requests }: Props): JSX.Element => {
     <S.StyledCardContainer>
       {requests?.map((request: any) => {
         return (
-          <S.GridItemWrapper>
+          <S.GridItemWrapper key={request.id}>
             <Card request={request} />
           </S.GridItemWrapper>
         );

@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const StyledContainer = styled.div`
   ${props => props.theme.Wrapper}
   margin-top: 4rem;
+
+  @media (max-width: 1200px) {
+    padding: 0 2rem;
+  }
 `;
 
 export const Header = styled.div`

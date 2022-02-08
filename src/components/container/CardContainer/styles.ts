@@ -7,6 +7,10 @@ export const StyledCardContainer = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(36.6rem, 1fr));
   justify-content: space-between;
   margin-bottom: 5rem;
+
+  @media screen and (max-width: ${props => props.theme.media.mobile}rem) {
+    display: block;
+  }
 `;
 
 export const GridItemWrapper = styled.div`
@@ -15,4 +19,22 @@ export const GridItemWrapper = styled.div`
   margin: 0 auto;
   width: 100%;
   height: 35.6rem;
+
+  &:nth-child(2n + 1) {
+    @media screen and (max-width: 1200px) {
+      justify-content: flex-start;
+    }
+    @media screen and (max-width: 805px) {
+      justify-content: center;
+    }
+  }
+
+  &:nth-child(2n) {
+    @media screen and (max-width: 1200px) {
+      justify-content: flex-end;
+    }
+    @media screen and (max-width: 805px) {
+      justify-content: center;
+    }
+  }
 `;
