@@ -1,10 +1,17 @@
+import Nav from 'components/mockNav';
+import MainContainer from 'components/container/mainContainer';
+import FilterContainer from 'components/container/filterContainer';
+import CardContainer from 'components/container/cardContainer';
+import EmptyBoard from 'components/container/emptyBoard';
+import FilterBar from 'components/filter/bar';
+
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import FilterBar from 'components/filter/bar';
 
 import { resetDropdown } from 'slices/dropdownSlice';
 import { getFilteredRequests } from 'slices/requestsSlice';
-import Card from 'components/card';
+
+const NO_ESTIMATION = '조건에 맞는 견적 요청이 없습니다.';
 
 const App = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -21,17 +28,24 @@ const App = (): JSX.Element => {
       window.removeEventListener('click', closeDropdown);
     };
   }, []);
-
-  const renderedRequests = requests.map(req => (
-    <Card key={req.id} request={req} />
-  ));
+    
 
   return (
-    <main>
+    <>
+      <Nav />
       <FilterBar />
-      <div>{renderedRequests}</div>
-    </main>
+      <MainContainer>
+        <FilterContainer>
+          <div>가공방식, 재료</div>
+          <div>토글| 상담중인 요청만 보기</div>
+        </FilterContainer>
+        {requests.length > 0 ? (
+          <CardContainer requests={requests} />
+        ) : (
+          <EmptyBoard message={NO_ESTIMATION} />
+        )}
+      </MainContainer>
+    </>
   );
-};
 
 export default App;
