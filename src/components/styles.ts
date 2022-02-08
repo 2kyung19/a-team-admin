@@ -1,28 +1,19 @@
 import styled, { keyframes } from 'styled-components';
 
 export const StyledHeader = styled.div`
-  height: 70px;
   width: 100%;
   display: flex;
   align-items: center;
+  padding: 2.5rem 4rem;
   background-color: ${({ theme }) => theme.colors.header};
   @media only screen and (max-width: 450px) {
-    height: 44px;
+    padding: 1.6rem 0rem 1.6rem 2.3rem;
   }
-`;
-
-const animatePosition = keyframes`
-  from {left: -230px;} 
-  to {left:0x;} 
 `;
 
 export const StyledEclipseWrapper = styled.button`
   display: none;
   @media only screen and (max-width: 450px) {
-    display: inline-block;
-    width: 18px;
-    height: 12px;
-    margin-left: 23px;
     display: flex;
     flex-direction: column;
   }
@@ -31,65 +22,62 @@ export const StyledEclipseWrapper = styled.button`
 export const StyledEclipse = styled.div`
   display: none;
   @media only screen and (max-width: 450px) {
-    width: 18px;
-    height: 2px;
-    margin-bottom: 2px;
+    width: 1.8rem;
+    height: 0.2rem;
     background-color: white;
     display: inline-block;
+    margin-bottom: 0.2rem;
   }
 `;
 
 export const StyledInnerDiv = styled.div`
   width: 100%;
-  height: 20px;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  margin: 40px 25px 40px 25px;
-  @media only screen and (max-width: 450px) {
-    width: 91.8px;
-    height: 12px;
-    margin: 16px 0px 16px 60px;
-  }
 `;
 
 export const StyledIcon = styled.img`
-  width: 153px;
-  height: 20px;
   @media only screen and (max-width: 450px) {
-    width: 100%;
-    height: 100%;
+    margin-left: 1.9rem;
   }
 `;
 
-export const StyledInfoIcon = styled.img`
-  width: 16.67px;
-  height: 15px;
-`;
-
 export const StyledInfoDiv = styled.div`
-  height: 20px;
-  width: 208.67px;
   display: flex;
   @media only screen and (max-width: 450px) {
     display: none;
   }
 `;
 
+export const StyledEclipseIcon = styled.img``;
+
 export const StyledInfoInnerDiv = styled.div`
-  margin-left: 8px;
-  padding-right: 32px;
-  width: 100px;
+  margin-left: 0.8rem;
+  padding-right: 3.2rem;
   color: white;
-  font-size: 14px;
+  font-size: 1.4rem;
   border-right: 2px solid white;
 `;
 
-export const StyledInfoLogin = styled(StyledInfoInnerDiv)`
-  margin-left: 32px;
-  padding-right: 0px;
-  width: 52px;
-  border-right: none;
+export const StyledInfoLogin = styled.div`
+  margin-left: 3.2rem;
+  color: white;
+  font-size: 1.4rem;
+`;
+
+export const StyledInfoIcon = styled.img`
+  width: 1.66rem;
+  height: 1.5rem;
+  @media only screen and (max-width: 450px) {
+    width: 1.66rem;
+    margin-right: 0.8rem;
+  }
+`;
+
+const animatePosition = keyframes`
+  from {left: -230px;} 
+  to {left:0x;} 
 `;
 
 export const StyledGreyBackground = styled.div<{ isClicked: boolean }>`
@@ -100,8 +88,6 @@ export const StyledGreyBackground = styled.div<{ isClicked: boolean }>`
   position: absolute;
   top: 0;
   left: 0;
-  animation: ${animatePosition} 1s;
-
   display: ${props => {
     return props.isClicked ? 'flex' : 'none';
   }};
@@ -109,19 +95,30 @@ export const StyledGreyBackground = styled.div<{ isClicked: boolean }>`
 
 export const StyledWhiteBgWrapper = styled.div`
   background-color: white;
-  width: 280px;
-  height: 100%;
+  width: 28rem;
   z-index: 20;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  animation: ${animatePosition} 0.5s;
 `;
 export const StyledWhiteBgHeader = styled.div`
   border-bottom: 1px #e5e5e5 solid;
+  padding: 1.6rem 0rem 1.6rem 2rem;
   height: 4.4rem;
 `;
-export const StyledEclipseIcon = styled.img`
-  margin: 1.6rem 1.25rem;
+
+export const StyledWhiteBgBodyIconWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const StyledWhiteBgBodyContainer = styled.div`
+  padding: 3.6rem 0rem 0rem 3.2rem;
 `;
 
 export const StyledWhiteBgBody = styled.div`
-  padding-left: 3.2rem;
-  margin-top: 3.6rem;
+  margin-bottom: 2.4rem;
+  font-size: 1.4rem;
 `;

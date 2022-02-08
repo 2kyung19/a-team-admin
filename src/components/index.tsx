@@ -42,8 +42,16 @@ const Header = (): JSX.Element => {
               alt="eclipse-Icon"
             />
           </S.StyledWhiteBgHeader>
-          <S.StyledWhiteBgBody>파트너정밀가공</S.StyledWhiteBgBody>
-          <S.StyledWhiteBgBody>{LOGIN_STATUS}</S.StyledWhiteBgBody>
+          <S.StyledWhiteBgBodyContainer>
+            <S.StyledWhiteBgBodyIconWrapper>
+            <S.StyledInfoIcon
+              src="https://i.ibb.co/cv4pzQL/white-Menu-Icon.png"
+              alt="white-Menu-Icon"
+            />
+            <S.StyledWhiteBgBody>파트너정밀가공</S.StyledWhiteBgBody>
+            </S.StyledWhiteBgBodyIconWrapper>
+            <S.StyledWhiteBgBody>{LOGIN_STATUS}</S.StyledWhiteBgBody>
+          </S.StyledWhiteBgBodyContainer>
         </S.StyledWhiteBgWrapper>
       </S.StyledGreyBackground>
     </div>
