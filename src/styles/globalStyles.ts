@@ -10,6 +10,10 @@ const styles = css`
     padding: 0;
   }
 
+  html {
+    font-size: 62.5%;
+  }
+
   body {
     font-family: 'Noto Sans KR', sans-serif;
   }
