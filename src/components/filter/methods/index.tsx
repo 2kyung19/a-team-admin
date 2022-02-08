@@ -23,6 +23,12 @@ const MethodsFilter = () => {
     (state: RootState) => state.dropdown.status,
   );
   const activeMethodFilters = useSelector(getMethodFilters);
+  const activeFiltersCount = activeMethodFilters.length;
+
+  const buttonText =
+    activeFiltersCount > 0
+      ? `${BUTTON_TEXT}(${activeFiltersCount})`
+      : BUTTON_TEXT;
 
   const toggleDropdown: React.MouseEventHandler<HTMLButtonElement> = e => {
     e.stopPropagation();
@@ -56,7 +62,7 @@ const MethodsFilter = () => {
         type="button"
         active={activeMethodFilters.length > 0}
         onClick={toggleDropdown}>
-        {BUTTON_TEXT}
+        {buttonText}
         <DropdownArrow active={activeMethodFilters.length > 0} />
       </S.DropdownBtn>
       <S.FilterDropdown

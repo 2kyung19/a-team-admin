@@ -37,7 +37,9 @@ const requestsSlice = createSlice({
       })
       .addCase(fetchRequests.fulfilled, (state, action) => {
         state.loaded = true;
-        state.requests = state.requests.concat(action.payload);
+        state.requests = state.requests
+          .concat(action.payload)
+          .sort((a, b) => b.due.localeCompare(a.due));
       });
   },
 });
