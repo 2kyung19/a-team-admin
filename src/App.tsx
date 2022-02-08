@@ -1,4 +1,4 @@
-import Nav from 'components/mockNav';
+import Nav from 'components/nav-bar/index';
 import MainContainer from 'components/container/mainContainer';
 import FilterContainer from 'components/container/filterContainer';
 import CardContainer from 'components/container/cardContainer';
