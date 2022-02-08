@@ -87,46 +87,22 @@ a-team-admin/src
 ├── components
 │   ├── card
 │   │   ├── btn
-│   │   │   ├── index.tsx
-│   │   │   └── styles.tsx
 │   │   ├── index.tsx
 │   │   ├── info
-│   │   │   ├── index.tsx
-│   │   │   └── styles.tsx
 │   │   ├── styles.tsx
 │   │   └── title
-│   │       ├── index.tsx
-│   │       └── styles.tsx
 │   ├── container
 │   │   ├── cardContainer
-│   │   │   ├── index.tsx
-│   │   │   └── styles.ts
 │   │   ├── emptyBoard
-│   │   │   ├── index.tsx
-│   │   │   └── styles.ts
 │   │   ├── filterContainer
-│   │   │   ├── index.tsx
-│   │   │   └── styles.ts
 │   │   └── mainContainer
-│   │       ├── index.tsx
-│   │       └── styles.ts
 │   ├── filter
 │   │   ├── bar
-│   │   │   ├── index.tsx
-│   │   │   └── styles.ts
 │   │   ├── materials
-│   │   │   └── index.tsx
 │   │   ├── methods
-│   │   │   └── index.tsx
 │   │   ├── reset
-│   │   │   ├── index.tsx
-│   │   │   └── styles.ts
 │   │   ├── shared
-│   │   │   ├── index.ts
-│   │   │   └── styles.ts
 │   │   └── toggle
-│   │       ├── index.tsx
-│   │       └── styles.tsx
 │   └── nav-bar
 │       ├── index.tsx
 │       └── styles.ts
@@ -146,6 +122,7 @@ a-team-admin/src
 └── utils
     ├── constants.ts
     └── mockData.ts
+
 ```
 
 <br />
