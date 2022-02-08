@@ -28,16 +28,13 @@ const App = (): JSX.Element => {
       window.removeEventListener('click', closeDropdown);
     };
   }, []);
-    
 
   return (
     <>
       <Nav />
-      <FilterBar />
       <MainContainer>
         <FilterContainer>
-          <div>가공방식, 재료</div>
-          <div>토글| 상담중인 요청만 보기</div>
+          <FilterBar />
         </FilterContainer>
         {requests.length > 0 ? (
           <CardContainer requests={requests} />
@@ -47,4 +44,6 @@ const App = (): JSX.Element => {
       </MainContainer>
     </>
   );
+};
+
 export default App;
