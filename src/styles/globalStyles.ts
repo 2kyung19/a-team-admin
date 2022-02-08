@@ -15,6 +15,7 @@ const styles = css`
 
   html {
     font-size: 62.5%;
+    overflow-y: scroll;
   }
 
   body {
