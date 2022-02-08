@@ -1,4 +1,4 @@
-import { createSlice, createSelector } from '@reduxjs/toolkit';
+import { createSlice, createSelector, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'slices/store';
 
 export const METHODS: METHOD = { milling: '밀링', lathe: '선반' };
@@ -28,9 +28,15 @@ const methodFiltersSlice = createSlice({
   name: 'methodFilters',
   initialState,
   reducers: {
-    methodFilterToggled(state, action) {
+    methodFilterToggled(state, action: PayloadAction<string>) {
       const toggledFilter = action.payload;
       state.filters[toggledFilter] = !state.filters[toggledFilter];
+      state.filterOn = Object.values(state.filters).some(v => v);
+    },
+    resetFilter(state) {
+      Object.keys(state.filters).forEach(key => {
+        state.filters[key] = false;
+      });
       state.filterOn = Object.values(state.filters).some(v => v);
     },
   },
@@ -44,5 +50,5 @@ export const getMethodFilters = createSelector(
       .map(item => METHODS[item]),
 );
 
-export const { methodFilterToggled } = methodFiltersSlice.actions;
+export const { methodFilterToggled, resetFilter } = methodFiltersSlice.actions;
 export default methodFiltersSlice.reducer;

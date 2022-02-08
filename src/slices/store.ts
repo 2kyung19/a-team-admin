@@ -4,6 +4,7 @@ import requestsReducer from 'slices/requestsSlice';
 import methodFilterReducer from 'slices/methodFiltersSlice';
 import materialsFilterReducer from 'slices/materialsFiltersSlice';
 import statusFilterReducer from 'slices/statusFiltersSlice';
+import dropdownReducer from 'slices/dropdownSlice';
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
     methodFilters: methodFilterReducer,
     materialFilters: materialsFilterReducer,
     status: statusFilterReducer,
+    dropdown: dropdownReducer,
   },
 });
 

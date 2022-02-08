@@ -39,6 +39,12 @@ const materialsFiltersSlice = createSlice({
       state.filters[toggledFilter] = !state.filters[toggledFilter];
       state.filterOn = Object.values(state.filters).some(v => v);
     },
+    resetFilter(state) {
+      Object.keys(state.filters).forEach(key => {
+        state.filters[key] = false;
+      });
+      state.filterOn = Object.values(state.filters).some(v => v);
+    },
   },
 });
 
@@ -50,5 +56,6 @@ export const getMaterialFilters = createSelector(
       .map(item => MATERIALS[item]),
 );
 
-export const { materialsFilterToggled } = materialsFiltersSlice.actions;
+export const { materialsFilterToggled, resetFilter } =
+  materialsFiltersSlice.actions;
 export default materialsFiltersSlice.reducer;

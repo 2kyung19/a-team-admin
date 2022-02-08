@@ -1,49 +1,72 @@
 import {
+  getMaterialFilters,
   MATERIALS,
   materialsFilterToggled,
 } from 'slices/materialsFiltersSlice';
-import { useSelector, useDispatch } from 'react-redux';
-import { toggleFilter } from 'components/filter/shared';
-import { useState } from 'react';
-import {
-  FilterDropdown,
-  DropdownBtn,
-} from 'components/filter/materials/styles';
-import DropdownArrow from 'assets/icons/DropdownArrow';
 
-const BUTTON_TEXT = '가공방식';
+import { openDropdown, resetDropdown } from 'slices/dropdownSlice';
+
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  toggleFilter,
+  MATERIALS_FILTER_BUTTON_TEXT as BUTTON_TEXT,
+} from 'components/filter/shared';
+import * as S from 'components/filter/shared/styles';
+import DropdownArrow from 'assets/icons/DropdownArrow';
+import { RootState } from 'slices/store';
 
 const MaterialsFilter = () => {
   const dispatch = useDispatch();
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownStatus = useSelector((state: RootState) => state.dropdown);
+  const activeMaterialFilters = useSelector(getMaterialFilters);
 
-  const toggleDropdown = () => {
-    setDropdownOpen(prev => !prev);
+  const toggleDropdown: React.MouseEventHandler<HTMLButtonElement> = e => {
+    e.stopPropagation();
+
+    if (dropdownStatus === 'closed' || dropdownStatus === 'methods') {
+      dispatch(openDropdown('materials'));
+    } else {
+      dispatch(resetDropdown());
+    }
+  };
+
+  const preventClickFromClosingDropdown: React.MouseEventHandler<
+    HTMLUListElement
+  > = e => {
+    e.stopPropagation();
   };
 
   const renderedMaterials = Object.keys(MATERIALS).map(material => {
     return (
-      <li key={material}>
+      <S.FilterItem key={material}>
         <input
           type="checkbox"
           id={material}
           name={material}
           value={material}
+          checked={activeMaterialFilters.includes(MATERIALS[material])}
           onChange={toggleFilter(materialsFilterToggled, dispatch)}
         />
         <label htmlFor={material}>{MATERIALS[material]}</label>
-      </li>
+      </S.FilterItem>
     );
   });
 
   return (
-    <>
-      <DropdownBtn type="button" onClick={toggleDropdown}>
+    <S.Filter>
+      <S.DropdownBtn
+        type="button"
+        active={activeMaterialFilters.length > 0}
+        onClick={toggleDropdown}>
         {BUTTON_TEXT}
-        <DropdownArrow />
-      </DropdownBtn>
-      <FilterDropdown open={dropdownOpen}>{renderedMaterials}</FilterDropdown>
-    </>
+        <DropdownArrow active={activeMaterialFilters.length > 0} />
+      </S.DropdownBtn>
+      <S.FilterDropdown
+        open={dropdownStatus === 'materials'}
+        onClick={preventClickFromClosingDropdown}>
+        {renderedMaterials}
+      </S.FilterDropdown>
+    </S.Filter>
   );
 };
 

@@ -7,8 +7,11 @@ const statusFiltersSlice = createSlice({
     filterToggled(state) {
       return !state;
     },
+    resetStatus(state) {
+      state = false;
+    },
   },
 });
 
-export const { filterToggled } = statusFiltersSlice.actions;
+export const { filterToggled, resetStatus } = statusFiltersSlice.actions;
 export default statusFiltersSlice.reducer;

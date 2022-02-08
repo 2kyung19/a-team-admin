@@ -7,6 +7,7 @@ const colors = {
   gray3: '#323D45',
   primary: '#2196f3',
   yellow: '#FFA000',
+  blue: '#1565C0',
 };
 
 const media = {
