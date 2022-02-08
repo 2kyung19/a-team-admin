@@ -32,6 +32,10 @@ const Btn = styled.button<{ color: string }>`
   }};
 
   margin: 0 1rem 0 0;
+
+  &:active {
+    filter: brightness(80%);
+  }
 `;
 
 export { Box, Btn };
