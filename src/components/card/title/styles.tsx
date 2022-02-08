@@ -8,8 +8,7 @@ const Box = styled.div`
 const Text = styled.div`
   height: 2.4rem;
 
-  font-family: 'Noto Sans KR Bold';
-  font-style: normal;
+  font-family: 'Noto Sans KR';
   font-weight: 700;
   font-size: 1.6rem;
   line-height: 1.5;
@@ -26,16 +25,13 @@ const Tag = styled.div<{ status: string }>`
   align-items: center;
   padding: 0.2rem 0.8rem;
 
-  width: 5rem;
   height: 2.4rem;
 
   background: ${props => props.theme.colors.white};
   border: 0.1rem solid ${props => props.theme.colors.yellow};
-  box-sizing: border-box;
   border-radius: 1.2rem;
 
-  font-family: 'Noto Sans KR Medium';
-  font-style: normal;
+  font-family: 'Noto Sans KR';
   font-weight: 500;
   font-size: 1.2rem;
   line-height: 1.6;

@@ -20,9 +20,8 @@ const Title = styled.div`
   width: 7rem;
   height: 2rem;
 
-  font-family: 'Noto Sans KR Regular';
+  font-family: 'Noto Sans KR';
   font-weight: 400;
-  font-style: normal;
   font-size: 1.4rem;
   line-height: 1.4;
 
@@ -33,9 +32,8 @@ const Data = styled.div`
   width: 23.2rem;
   height: 2rem;
 
-  font-family: 'Noto Sans KR Bold';
+  font-family: 'Noto Sans KR';
   font-weight: 700;
-  font-style: normal;
   font-size: 1.4rem;
   line-height: 1.4;
 

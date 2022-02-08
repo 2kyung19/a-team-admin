@@ -6,34 +6,29 @@ const Box = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 2.4rem 1.6rem;
-
   width: 36.6rem;
   height: 35.6rem;
-
   background-color: ${props => props.theme.colors.white};
   border: 0.1rem solid ${props => props.theme.colors.gray1};
-  box-sizing: border-box;
   border-radius: 0.4rem;
-
   cursor: pointer;
-
-  @media only screen and (max-width: ${props => props.theme.media.mobile}em) {
-    width: 32rem;
-    height: 34.4rem;
-  }
 
   &:hover {
     padding: 2.3rem 1.5rem;
     border: 0.2rem solid ${props => props.theme.colors.primary};
+  }
+
+  @media only screen and (max-width: ${props => props.theme.media.mobile}em) {
+    width: 32rem;
+    height: 34.4rem;
   }
 `;
 
 const Top = styled.div`
   width: 100%;
   height: 10.8rem;
-  border-bottom: 0.1rem solid ${props => props.theme.colors.gray1};
-
   margin: 0 0 3.2rem 0;
+  border-bottom: 0.1rem solid ${props => props.theme.colors.gray1};
 
   @media only screen and (max-width: ${props => props.theme.media.mobile}em) {
     height: 9.6rem;
@@ -48,11 +43,8 @@ const Content = styled.div`
 `;
 
 const Customer = styled.div`
-  width: 5.1rem;
   height: 2rem;
-
-  font-family: 'Noto Sans KR Medium';
-  font-style: normal;
+  font-family: 'Noto Sans KR';
   font-weight: 500;
   font-size: 1.4rem;
   line-height: 1.4;
@@ -66,11 +58,8 @@ const Customer = styled.div`
 `;
 
 const DueDate = styled.div`
-  width: 12.5rem;
   height: 2rem;
-
-  font-family: 'Noto Sans KR Regular';
-  font-style: normal;
+  font-family: 'Noto Sans KR';
   font-weight: 400;
   font-size: 1.4rem;
   line-height: 1.4;
