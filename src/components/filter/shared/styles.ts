@@ -43,6 +43,7 @@ export const FilterDropdown = styled.ul<{ open: boolean }>`
   width: 13rem;
   font-size: 1.4rem;
   gap: 0.8rem;
+  z-index: 999;
 `;
 
 export const FilterItem = styled.li`

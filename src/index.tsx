@@ -6,6 +6,9 @@ import theme from 'styles/theme';
 import App from 'App';
 import { Provider } from 'react-redux';
 import { store } from 'slices/store';
+import { fetchRequests } from 'slices/requestsSlice';
+
+store.dispatch(fetchRequests());
 
 ReactDOM.render(
   <React.StrictMode>

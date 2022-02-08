@@ -5,9 +5,9 @@ import {
 } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-import { RootState } from 'slices/store';
+import { RequestType } from 'types/request';
 
-import { mockData } from 'utils/mockData';
+import { RootState } from 'slices/store';
 
 import { getMethodFilters } from 'slices/methodFiltersSlice';
 import { getMaterialFilters } from 'slices/materialsFiltersSlice';
@@ -15,7 +15,7 @@ import { getMaterialFilters } from 'slices/materialsFiltersSlice';
 export const fetchRequests = createAsyncThunk(
   'requests/fetchRequests',
   async () => {
-    const response = await axios.get('/placeholder');
+    const response = await axios.get('http://localhost:3001/requests');
     return response.data;
   },
 );
@@ -23,8 +23,11 @@ export const fetchRequests = createAsyncThunk(
 const requestsSlice = createSlice({
   name: 'requests',
   initialState: {
-    requests: mockData.requests,
+    requests: [],
     loaded: false,
+  } as {
+    requests: RequestType[];
+    loaded: boolean;
   },
   reducers: {},
   extraReducers(builder) {
@@ -56,16 +59,25 @@ export const getFilteredRequests = createSelector(
 
     let filteredRequests = requests;
 
-    if (methodFilters.length) {
-      filteredRequests = filteredRequests.filter(r => {
-        return r.method.some(m => methodFilters.includes(m));
-      });
-    }
-
-    if (materialFilters.length) {
-      filteredRequests = filteredRequests.filter(r => {
-        return r.material.some(m => materialFilters.includes(m));
-      });
+    if (methodFilters.length && materialFilters.length) {
+      filteredRequests = filteredRequests
+        .filter(r => {
+          return methodFilters.every(filter => r.method.includes(filter));
+        })
+        .filter(r => {
+          return materialFilters.every(filter => r.material.includes(filter));
+        });
+    } else {
+      if (methodFilters.length) {
+        filteredRequests = filteredRequests.filter(r => {
+          return r.method.some(m => methodFilters.includes(m));
+        });
+      }
+      if (materialFilters.length) {
+        filteredRequests = filteredRequests.filter(r => {
+          return r.material.some(m => materialFilters.includes(m));
+        });
+      }
     }
 
     if (statusFilter) {

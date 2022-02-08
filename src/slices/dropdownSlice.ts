@@ -1,16 +1,19 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-type DropdownState = 'closed' | 'materials' | 'methods';
+type DropdownState =
+  | { status: 'closed' }
+  | { status: 'methods' }
+  | { status: 'materials' };
 
 const dropdownSlice = createSlice({
   name: 'dropdown',
-  initialState: 'closed' as DropdownState,
+  initialState: { status: 'closed' } as DropdownState,
   reducers: {
-    resetDropdown() {
-      return 'closed';
+    resetDropdown(state) {
+      state.status = 'closed';
     },
-    openDropdown(_, action: PayloadAction<'closed' | 'materials' | 'methods'>) {
-      return action.payload;
+    openDropdown(state, action) {
+      state.status = action.payload;
     },
   },
 });

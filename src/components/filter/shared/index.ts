@@ -1,4 +1,5 @@
 import { AppDispatch } from 'slices/store';
+import { openDropdown, resetDropdown } from 'slices/dropdownSlice';
 
 export const toggleFilter =
   (func: Function, dispatch: AppDispatch) =>
@@ -10,6 +11,22 @@ export const preventClickFromClosingDropdown: React.MouseEventHandler<
   HTMLUListElement
 > = e => {
   e.stopPropagation();
+};
+
+export const toggleDropdown = (
+  dropdownStatus: string,
+  dispatch: AppDispatch,
+) => {
+  const toggle: React.MouseEventHandler<HTMLButtonElement> = e => {
+    e.stopPropagation();
+
+    if (dropdownStatus === 'closed' || dropdownStatus === 'methods') {
+      dispatch(openDropdown('materials'));
+    } else {
+      dispatch(resetDropdown());
+    }
+  };
+  return toggle;
 };
 
 export const MATERIALS_FILTER_BUTTON_TEXT = '재료';

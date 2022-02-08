@@ -1,40 +1,29 @@
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  toggleFilter,
+  preventClickFromClosingDropdown,
+  toggleDropdown,
+  MATERIALS_FILTER_BUTTON_TEXT as BUTTON_TEXT,
+} from 'components/filter/shared';
+import DropdownArrow from 'assets/icons/DropdownArrow';
+
+// style-related
+import * as S from 'components/filter/shared/styles';
+
+// slice-related
+import { RootState } from 'slices/store';
 import {
   getMaterialFilters,
   MATERIALS,
   materialsFilterToggled,
 } from 'slices/materialsFiltersSlice';
 
-import { openDropdown, resetDropdown } from 'slices/dropdownSlice';
-
-import { useSelector, useDispatch } from 'react-redux';
-import {
-  toggleFilter,
-  MATERIALS_FILTER_BUTTON_TEXT as BUTTON_TEXT,
-} from 'components/filter/shared';
-import * as S from 'components/filter/shared/styles';
-import DropdownArrow from 'assets/icons/DropdownArrow';
-import { RootState } from 'slices/store';
-
 const MaterialsFilter = () => {
   const dispatch = useDispatch();
-  const dropdownStatus = useSelector((state: RootState) => state.dropdown);
+  const dropdownStatus: string = useSelector(
+    (state: RootState) => state.dropdown.status,
+  );
   const activeMaterialFilters = useSelector(getMaterialFilters);
-
-  const toggleDropdown: React.MouseEventHandler<HTMLButtonElement> = e => {
-    e.stopPropagation();
-
-    if (dropdownStatus === 'closed' || dropdownStatus === 'methods') {
-      dispatch(openDropdown('materials'));
-    } else {
-      dispatch(resetDropdown());
-    }
-  };
-
-  const preventClickFromClosingDropdown: React.MouseEventHandler<
-    HTMLUListElement
-  > = e => {
-    e.stopPropagation();
-  };
 
   const renderedMaterials = Object.keys(MATERIALS).map(material => {
     return (
@@ -57,7 +46,7 @@ const MaterialsFilter = () => {
       <S.DropdownBtn
         type="button"
         active={activeMaterialFilters.length > 0}
-        onClick={toggleDropdown}>
+        onClick={toggleDropdown(dropdownStatus, dispatch)}>
         {BUTTON_TEXT}
         <DropdownArrow active={activeMaterialFilters.length > 0} />
       </S.DropdownBtn>

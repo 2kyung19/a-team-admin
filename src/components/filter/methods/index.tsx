@@ -19,7 +19,9 @@ import DropdownArrow from 'assets/icons/DropdownArrow';
 
 const MethodsFilter = () => {
   const dispatch = useDispatch();
-  const dropdownStatus = useSelector((state: RootState) => state.dropdown);
+  const dropdownStatus = useSelector(
+    (state: RootState) => state.dropdown.status,
+  );
   const activeMethodFilters = useSelector(getMethodFilters);
 
   const toggleDropdown: React.MouseEventHandler<HTMLButtonElement> = e => {
