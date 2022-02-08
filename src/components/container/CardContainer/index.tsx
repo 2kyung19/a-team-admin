@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import Card from 'components/card';
+import * as S from 'components/container/CardContainer/styles';
 import { RequestType } from 'types/request';
 
 interface Props {
@@ -8,33 +8,16 @@ interface Props {
 
 const CardContainer = ({ requests }: Props): JSX.Element => {
   return (
-    <StyledCardContainer>
+    <S.StyledCardContainer>
       {requests?.map((request: any) => {
         return (
-          <GridItemWrapper>
+          <S.GridItemWrapper>
             <Card request={request} />
-          </GridItemWrapper>
+          </S.GridItemWrapper>
         );
       })}
-    </StyledCardContainer>
+    </S.StyledCardContainer>
   );
 };
-
-const StyledCardContainer = styled.div`
-  width: 100%;
-  display: grid;
-  gap: 1.6rem;
-  grid-template-columns: repeat(auto-fill, minmax(36.6rem, 1fr));
-  justify-content: space-between;
-  margin-bottom: 5rem;
-`;
-
-const GridItemWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  width: 100%;
-  height: 35.6rem;
-`;
 
 export default CardContainer;

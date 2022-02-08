@@ -1,17 +1,11 @@
-import styled from 'styled-components';
+import * as S from 'components/container/FilterContainer/styles';
 
 interface Props {
   children: JSX.Element[] | JSX.Element;
 }
 
 const FilterContainer = ({ children }: Props): JSX.Element => {
-  return <FilterWrapper>{children}</FilterWrapper>;
+  return <S.FilterWrapper>{children}</S.FilterWrapper>;
 };
-
-const FilterWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 3.2rem;
-`;
 
 export default FilterContainer;
