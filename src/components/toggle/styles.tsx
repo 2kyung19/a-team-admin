@@ -26,6 +26,7 @@ const Check = styled.input`
 
   border-radius: 1.7rem;
   background-color: #c2c2c2;
+  cursor: pointer;
 
   appearance: none;
 
