@@ -10,7 +10,7 @@ const colors = {
 };
 
 const media = {
-  mobile: 425,
+  mobile: 26.56,
 };
 
 const theme = {

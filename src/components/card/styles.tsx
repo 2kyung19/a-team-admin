@@ -5,38 +5,38 @@ const Box = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 24px 16px;
+  padding: 2.4rem 1.6rem;
 
-  width: 366px;
-  height: 356px;
+  width: 36.6rem;
+  height: 35.6rem;
 
   background-color: ${props => props.theme.colors.white};
-  border: 1px solid ${props => props.theme.colors.gray1};
+  border: 0.1rem solid ${props => props.theme.colors.gray1};
   box-sizing: border-box;
-  border-radius: 4px;
+  border-radius: 0.4rem;
 
   cursor: pointer;
 
-  @media only screen and (max-width: ${props => props.theme.media.mobile}px) {
-    width: 320px;
-    height: 344px;
+  @media only screen and (max-width: ${props => props.theme.media.mobile}em) {
+    width: 32rem;
+    height: 34.4rem;
   }
 
   &:hover {
-    padding: 23px 15px;
-    border: 2px solid ${props => props.theme.colors.primary};
+    padding: 2.3rem 1.5rem;
+    border: 0.2rem solid ${props => props.theme.colors.primary};
   }
 `;
 
 const Top = styled.div`
   width: 100%;
-  height: 108px;
-  border-bottom: 1px solid ${props => props.theme.colors.gray1};
+  height: 10.8rem;
+  border-bottom: 0.1rem solid ${props => props.theme.colors.gray1};
 
-  margin: 0 0 32px 0;
+  margin: 0 0 3.2rem 0;
 
-  @media only screen and (max-width: ${props => props.theme.media.mobile}px) {
-    height: 96px;
+  @media only screen and (max-width: ${props => props.theme.media.mobile}em) {
+    height: 9.6rem;
   }
 `;
 
@@ -44,36 +44,36 @@ const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
-  height: 168px;
+  height: 16.8rem;
 `;
 
 const Customer = styled.div`
-  width: 51px;
-  height: 20px;
+  width: 5.1rem;
+  height: 2rem;
 
   font-family: 'Noto Sans KR Medium';
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 1.4rem;
+  line-height: 1.4;
 
   color: ${props => props.theme.colors.gray3};
-  margin: 4px 0 24px 0;
+  margin: 0.4rem 0 2.4rem 0;
 
-  @media only screen and (max-width: ${props => props.theme.media.mobile}px) {
-    margin: 0 0 16px 0;
+  @media only screen and (max-width: ${props => props.theme.media.mobile}em) {
+    margin: 0 0 1.6rem 0;
   }
 `;
 
 const DueDate = styled.div`
-  width: 125px;
-  height: 20px;
+  width: 12.5rem;
+  height: 2rem;
 
   font-family: 'Noto Sans KR Regular';
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 1.4rem;
+  line-height: 1.4;
 
   color: ${props => props.theme.colors.gray2};
 `;

@@ -4,7 +4,7 @@ import Title from 'components/card/title';
 import CardInfo from 'components/card/info';
 import CardBtn from 'components/card/btn';
 
-interface props {
+interface Props {
   request: {
     id: number;
     title: string;
@@ -18,14 +18,14 @@ interface props {
   };
 }
 
-const Card = (Props: props): JSX.Element => {
-  const { request } = Props;
+const Card = (props: Props): JSX.Element => {
+  const { request } = props;
 
   return (
     <S.Box>
       <S.Top>
-        <Title status={request.status}>비행기 시제품 제작</Title>
-        <S.Customer>A 고객사</S.Customer>
+        <Title status={request.status}>{request.title}</Title>
+        <S.Customer>{request.client}</S.Customer>
         <S.DueDate>{request.due}까지 납기</S.DueDate>
       </S.Top>
       <S.Content>
