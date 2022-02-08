@@ -4,8 +4,8 @@ export type RequestType = {
   client: string;
   due: string;
   count: number;
-  amount: 100;
+  amount: number;
   method: string[];
   material: string[];
-  status: '대기중' | '상담중';
+  status: string;
 };
