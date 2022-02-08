@@ -1,7 +1,7 @@
 import Nav from 'components/mockNav';
 import MainContainer from 'components/container/mainContainer';
-import FilterContainer from 'components/container/FilterContainer';
-import CardContainer from 'components/container/CardContainer';
+import FilterContainer from 'components/container/filterContainer';
+import CardContainer from 'components/container/cardContainer';
 import EmptyBoard from 'components/container/emptyBoard';
 import constants from 'utils/constants';
 

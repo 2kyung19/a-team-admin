@@ -1,4 +1,4 @@
-import * as S from 'components/container/FilterContainer/styles';
+import * as S from 'components/container/filterContainer/styles';
 
 interface Props {
   children: JSX.Element[] | JSX.Element;

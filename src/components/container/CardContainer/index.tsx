@@ -1,5 +1,5 @@
 import Card from 'components/card';
-import * as S from 'components/container/CardContainer/styles';
+import * as S from 'components/container/cardContainer/styles';
 import { RequestType } from 'types/request';
 
 interface Props {
