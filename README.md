@@ -17,9 +17,9 @@
 ## 팀원
 
 - [@wook95](https://github.com/wook95)
-- [@2kyung19](https://github.com/2kyung19)
 - [@tae100k](https://github.com/tae100k)
 - [@hyundonny](https://github.com/hyundonny)
+- [@2kyung19](https://github.com/2kyung19)
 
 <br />
 
@@ -71,62 +71,91 @@
 
 ## 자료 구조
 
-```jsx
+```
 a-team-admin/src
-	  │
-    ├── App.tsx
-		├── assets/images
-    │    ├── icons
-    │    │   ├── DropdownArrow.tsx
-    │    │   └── Refresh.tsx
-    │    └── images
-    │        ├── eclipseIcon.png
-    │        ├── icon.png
-    │        ├── producer-icon.png
-    │        └── whiteMenuIcon.png
-    ├── components
-    │    ├── card
-		│    │   ├── btn
-    │    │   ├── info
-    │    │   ├── title
-    │    │   ├── index.tsx
-    │    │   └── styles.tsx
-    │    ├── container
-		│    │   ├── cardContainer
-    │    │   ├── emptyBoard
-    │    │   ├── filterContainer
-    │    │   └── mainContainer
-    │    ├── filter
-		│    │   ├── bar
-    │    │   ├── materials
-    │    │   ├── methods
-		│    │   ├── reset
-    │    │   ├── shared
-    │    │   └── toggle
-    │    └── nav-bar
-    │        ├── index.tsx
-    │        └── styles.ts
-    ├── index.tsx
-    ├── slices
-    │    ├── dropdownSlice.ts
-    │    ├── materialsFiltersSlice.ts
-    │    ├── methodFiltersSlice.ts
-    │    ├── requestsSlice.ts
-    │    ├── statusFiltersSlice.ts
-    │    └── store.ts  
-    ├── styles
-    │    ├── GlobalStyles.ts
-    │    └── theme.ts
-    ├── types
-    │    └── request.d.ts 
-		└── utils
-         ├── constants.ts
-         └── mockData.ts
+│ 
+├── App.tsx
+├── assets
+│   ├── icons
+│   │   ├── DropdownArrow.tsx
+│   │   └── Refresh.tsx
+│   └── images
+│       ├── eclipseIcon.png
+│       ├── icon.png
+│       ├── producer-icon.png
+│       └── whiteMenuIcon.png
+├── components
+│   ├── card
+│   │   ├── btn
+│   │   │   ├── index.tsx
+│   │   │   └── styles.tsx
+│   │   ├── index.tsx
+│   │   ├── info
+│   │   │   ├── index.tsx
+│   │   │   └── styles.tsx
+│   │   ├── styles.tsx
+│   │   └── title
+│   │       ├── index.tsx
+│   │       └── styles.tsx
+│   ├── container
+│   │   ├── cardContainer
+│   │   │   ├── index.tsx
+│   │   │   └── styles.ts
+│   │   ├── emptyBoard
+│   │   │   ├── index.tsx
+│   │   │   └── styles.ts
+│   │   ├── filterContainer
+│   │   │   ├── index.tsx
+│   │   │   └── styles.ts
+│   │   └── mainContainer
+│   │       ├── index.tsx
+│   │       └── styles.ts
+│   ├── filter
+│   │   ├── bar
+│   │   │   ├── index.tsx
+│   │   │   └── styles.ts
+│   │   ├── materials
+│   │   │   └── index.tsx
+│   │   ├── methods
+│   │   │   └── index.tsx
+│   │   ├── reset
+│   │   │   ├── index.tsx
+│   │   │   └── styles.ts
+│   │   ├── shared
+│   │   │   ├── index.ts
+│   │   │   └── styles.ts
+│   │   └── toggle
+│   │       ├── index.tsx
+│   │       └── styles.tsx
+│   └── nav-bar
+│       ├── index.tsx
+│       └── styles.ts
+├── index.tsx
+├── slices
+│   ├── dropdownSlice.ts
+│   ├── materialsFiltersSlice.ts
+│   ├── methodFiltersSlice.ts
+│   ├── requestsSlice.ts
+│   ├── statusFiltersSlice.ts
+│   └── store.ts
+├── styles
+│   ├── globalStyles.ts
+│   └── theme.ts
+├── types
+│   └── request.d.ts
+└── utils
+    ├── constants.ts
+    └── mockData.ts
 ```
 
 <br />
 
 ## 회고
+
+### 이욱창
+
+- 전체 레이아웃 컨테이너들을 구현했습니다. 로직과 관련이 없는 컴포넌트들만 만들다 보니, 왜 container-presenter 패턴이 나온지, 왜 hooks를 쓰면 로직과 분리가 잘 되는지 배웠습니다. 또 공통으로 사용되는 컨테이너 컴포넌트들을 잘 만들어 팀원들과 합칠 때 무리가 없었습니다.
+- heroku를 이용해 json-server와 프론트엔드 서버 모두 배포를 했습니다. typescript는 컴파일이 필요하다는걸 잘 알게 되었습니다.
 
 ### 김태희
 
@@ -143,8 +172,4 @@ a-team-admin/src
 - css와 타입스크립트 기반 리액트에 대한 자료 공유를 통해 많은 지식을 얻고, 적용할 수 있었습니다.
 - 주어진 명세서에 따라 맡은 역할를 구현하였고, 사용 방법과 예시를 공유하여 팀원분들이 해당 컴포넌트의 사용에 어려움 없도록 하였습니다.
 
-### 이욱창
-
-- 전체 레이아웃 컨테이너들을 구현했습니다. 로직과 관련이 없는 컴포넌트들만 만들다 보니, 왜 container-presenter 패턴이 나온지, 왜 hooks를 쓰면 로직과 분리가 잘 되는지 배웠습니다. 또 공통으로 사용되는 컨테이너 컴포넌트들을 잘 만들어 팀원들과 합칠 때 무리가 없었습니다.
-- heroku를 이용해 json-server와 프론트엔드 서버 모두 배포를 했습니다. typescript는 컴파일이 필요하다는걸 잘 알게 되었습니다.
 
