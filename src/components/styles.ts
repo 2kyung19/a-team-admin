@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const StyledHeader = styled.div`
   height: 70px;
@@ -9,6 +9,11 @@ export const StyledHeader = styled.div`
   @media only screen and (max-width: 450px) {
     height: 44px;
   }
+`;
+
+const animatePosition = keyframes`
+  from {left: -230px;} 
+  to {left:0x;} 
 `;
 
 export const StyledEclipseWrapper = styled.button`
@@ -92,9 +97,11 @@ export const StyledGreyBackground = styled.div<{ isClicked: boolean }>`
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 10;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
+  animation: ${animatePosition} 1s;
+
   display: ${props => {
     return props.isClicked ? 'flex' : 'none';
   }};
@@ -111,7 +118,7 @@ export const StyledWhiteBgHeader = styled.div`
   height: 4.4rem;
 `;
 export const StyledEclipseIcon = styled.img`
-  margin: 1rem 1.25rem;
+  margin: 1.6rem 1.25rem;
 `;
 
 export const StyledWhiteBgBody = styled.div`
