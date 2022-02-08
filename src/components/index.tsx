@@ -35,7 +35,10 @@ const Header = (): JSX.Element => {
         onClick={() => {
           setIsClicked(!isClicked);
         }}>
-        <S.StyledWhiteBgWrapper>
+        <S.StyledWhiteBgWrapper
+          onClick={event => {
+            event.stopPropagation();
+          }}>
           <S.StyledWhiteBgHeader>
             <S.StyledEclipseIcon
               src="https://i.ibb.co/fXZSLq9/eclipse-Icon.png"
@@ -44,11 +47,11 @@ const Header = (): JSX.Element => {
           </S.StyledWhiteBgHeader>
           <S.StyledWhiteBgBodyContainer>
             <S.StyledWhiteBgBodyIconWrapper>
-            <S.StyledInfoIconWhite
-              src="https://i.ibb.co/cv4pzQL/white-Menu-Icon.png"
-              alt="white-Menu-Icon"
-            />
-            <S.StyledWhiteBgBody>파트너정밀가공</S.StyledWhiteBgBody>
+              <S.StyledInfoIconWhite
+                src="https://i.ibb.co/cv4pzQL/white-Menu-Icon.png"
+                alt="white-Menu-Icon"
+              />
+              <S.StyledWhiteBgBody>파트너정밀가공</S.StyledWhiteBgBody>
             </S.StyledWhiteBgBodyIconWrapper>
             <S.StyledWhiteBgBody>{LOGIN_STATUS}</S.StyledWhiteBgBody>
           </S.StyledWhiteBgBodyContainer>
