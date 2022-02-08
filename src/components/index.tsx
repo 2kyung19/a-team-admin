@@ -44,7 +44,7 @@ const Header = (): JSX.Element => {
           </S.StyledWhiteBgHeader>
           <S.StyledWhiteBgBodyContainer>
             <S.StyledWhiteBgBodyIconWrapper>
-            <S.StyledInfoIcon
+            <S.StyledInfoIconWhite
               src="https://i.ibb.co/cv4pzQL/white-Menu-Icon.png"
               alt="white-Menu-Icon"
             />

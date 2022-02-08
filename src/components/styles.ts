@@ -6,14 +6,14 @@ export const StyledHeader = styled.div`
   align-items: center;
   padding: 2.5rem 4rem;
   background-color: ${({ theme }) => theme.colors.header};
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: ${props => props.theme.media.mobile}em) {
     padding: 1.6rem 0rem 1.6rem 2.3rem;
   }
 `;
 
 export const StyledEclipseWrapper = styled.button`
   display: none;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: ${props => props.theme.media.mobile}em) {
     display: flex;
     flex-direction: column;
   }
@@ -21,10 +21,10 @@ export const StyledEclipseWrapper = styled.button`
 
 export const StyledEclipse = styled.div`
   display: none;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: ${props => props.theme.media.mobile}em) {
     width: 1.8rem;
     height: 0.2rem;
-    background-color: white;
+    background-color: ${({ theme }) => theme.colors.white};
     display: inline-block;
     margin-bottom: 0.2rem;
   }
@@ -38,14 +38,14 @@ export const StyledInnerDiv = styled.div`
 `;
 
 export const StyledIcon = styled.img`
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: ${props => props.theme.media.mobile}em) {
     margin-left: 1.9rem;
   }
 `;
 
 export const StyledInfoDiv = styled.div`
   display: flex;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: ${props => props.theme.media.mobile}em) {
     display: none;
   }
 `;
@@ -55,24 +55,26 @@ export const StyledEclipseIcon = styled.img``;
 export const StyledInfoInnerDiv = styled.div`
   margin-left: 0.8rem;
   padding-right: 3.2rem;
-  color: white;
+  color: ${({ theme }) => theme.colors.white};
   font-size: 1.4rem;
   border-right: 2px solid white;
 `;
 
 export const StyledInfoLogin = styled.div`
   margin-left: 3.2rem;
-  color: white;
+  color: ${({ theme }) => theme.colors.white};
   font-size: 1.4rem;
 `;
 
 export const StyledInfoIcon = styled.img`
   width: 1.66rem;
   height: 1.5rem;
-  @media only screen and (max-width: 450px) {
-    width: 1.66rem;
-    margin-right: 0.8rem;
-  }
+`;
+
+export const StyledInfoIconWhite = styled(StyledInfoIcon)`
+  width: 1.66rem;
+  height: 1.5rem;
+  margin-right: 0.8rem;
 `;
 
 const animatePosition = keyframes`
@@ -94,7 +96,7 @@ export const StyledGreyBackground = styled.div<{ isClicked: boolean }>`
 `;
 
 export const StyledWhiteBgWrapper = styled.div`
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.white};
   width: 28rem;
   z-index: 20;
   position: absolute;
