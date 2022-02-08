@@ -1,6 +1,9 @@
 import { createGlobalStyle, css } from 'styled-components';
 import reset from 'styled-reset';
 
+// prettier로 createGlobalStyle은 포맷이 안 됨
+// styled-components의 css를 활용해 문제 해결
+
 const styles = css`
   *,
   *::before,
@@ -28,6 +31,12 @@ const styles = css`
     border: none;
     cursor: pointer;
     font-family: inherit;
+  }
+
+  ul,
+  ol,
+  li {
+    list-style: none;
   }
 `;
 
